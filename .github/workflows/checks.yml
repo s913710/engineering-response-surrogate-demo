@@ -1,0 +1,14 @@
+name: Synthetic demo checks
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements.txt
+      - run: python -m unittest discover -s tests -v
+      - run: python -m engineering_surrogate.run --output artifacts_local
+      - run: python -m engineering_surrogate.predict --model artifacts_local/model.json --input artifacts_local/prediction_inputs.csv --output artifacts_local/prediction_check.csv
