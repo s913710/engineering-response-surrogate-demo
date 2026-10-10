@@ -1,1 +1,39 @@
-{}
+{
+  "data_kind": "SYNTHETIC_DEMONSTRATION",
+  "seed": 20261011,
+  "scenario_count": 100,
+  "repeats_per_scenario": 30,
+  "case_count": 3000,
+  "partitions": {
+    "train": 60,
+    "calibration": 20,
+    "test": 20
+  },
+  "responses": [
+    {
+      "response": "displacement_mm",
+      "scenario_mean_r2": 0.9989077447484983,
+      "scenario_mean_rmse": 0.06475760179215681,
+      "realisation_rmse": 0.2644660681034954,
+      "data_kind": "SYNTHETIC_DEMONSTRATION",
+      "coverage_90": 0.9099999999999999,
+      "mean_width_90": 0.8503135722912804,
+      "coverage_95": 0.99,
+      "mean_width_95": 1.3683311651497365
+    },
+    {
+      "response": "stress_mpa",
+      "scenario_mean_r2": 0.9952338996069913,
+      "scenario_mean_rmse": 0.5282654418630727,
+      "realisation_rmse": 1.9366789674155211,
+      "data_kind": "SYNTHETIC_DEMONSTRATION",
+      "coverage_90": 0.9233333333333332,
+      "mean_width_90": 6.954865495246,
+      "coverage_95": 1.0,
+      "mean_width_95": 12.140362111899565
+    }
+  ],
+  "data_source": "Generated algebraic relationships plus Gaussian noise; no actual FE or automotive data",
+  "model_selection": "Five-fold training-scenario CV; no test tuning",
+  "figures_generated": true
+}

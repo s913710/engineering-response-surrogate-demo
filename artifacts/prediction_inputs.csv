@@ -1,0 +1,4 @@
+stiffness_factor,load_factor,geometry_factor
+1.0,1.0,1.0
+0.9,1.2,1.1
+1.1,0.8,0.9
